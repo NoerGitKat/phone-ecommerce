@@ -1,0 +1,20 @@
+{
+	"name": "phone-ecommerce",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "cd client && npm start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NoerGitKat/phone-ecommerce.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NoerGitKat/phone-ecommerce/issues"
+	},
+	"homepage": "https://github.com/NoerGitKat/phone-ecommerce#readme"
+}
