@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { ProductConsumer } from '../context';
 import ButtonWrapper from './ButtonWrapper';
+import Modal from './Modal';
 import { Link } from 'react-router-dom';
 
 const ProductDetails = () => {
@@ -8,7 +9,7 @@ const ProductDetails = () => {
 		<ProductConsumer>
 			{value => {
 				const { title, img, company, price, info, inCart } = value.singleProduct;
-				const { addToCart } = value;
+				const { addToCart, modalOpened, closeModal } = value;
 
 				return (
 					<div className="container py-5">
@@ -40,10 +41,20 @@ const ProductDetails = () => {
 							<Link to="/">
 								<ButtonWrapper>Back to products</ButtonWrapper>
 							</Link>
-							<ButtonWrapper cart disabled={inCart} onClick={() => addToCart(value.singleProduct)}>
+							<ButtonWrapper
+								cart
+								disabled={inCart}
+								onClick={() => {
+									addToCart(value.singleProduct);
+									closeModal();
+								}}
+							>
 								{inCart ? 'In your cart' : 'Add to cart'}{' '}
 							</ButtonWrapper>
 						</div>
+						{
+							// modalOpened ? <Modal selectedProduct={value.singleProduct} closeModal={closeModal} /> : null
+						}
 					</div>
 				);
 			}}

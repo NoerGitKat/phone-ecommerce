@@ -16,7 +16,7 @@ const ProductList = () => {
 						<ProductConsumer>
 							{value => {
 								return (
-									<div>
+									<Fragment>
 										{value.allProducts.map(product => (
 											<Product
 												key={product.id}
@@ -28,7 +28,7 @@ const ProductList = () => {
 										{value.modalOpened ? (
 											<Modal closeModal={value.closeModal} selectedProduct={value.modalProduct} />
 										) : null}
-									</div>
+									</Fragment>
 								);
 							}}
 						</ProductConsumer>

@@ -10,7 +10,9 @@ const Product = props => {
 		<ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
 			<div className="card">
 				<div className="img-container p-5" onClick={() => handleDetail(props.product)}>
-					<img src={img} alt={title} className="card-img-top" />
+					<Link to="/details">
+						<img src={img} alt={title} className="card-img-top" />
+					</Link>
 					<button className="cart-btn" disabled={inCart} onClick={() => addToCart(props.product)}>
 						{inCart ? (
 							<p className="text-capitalize mb-0" disabled>

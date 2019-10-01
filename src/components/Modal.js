@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 
 export default function Modal(props) {
 	const { img, title, price } = props.selectedProduct;
+
 	const { closeModal } = props;
 	return (
 		<ModalWrapper onClick={() => closeModal()}>
 			<div className="container">
 				<div className="row">
-					<div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize">
+					<div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 p-5 text-center text-capitalize">
 						<h5>Item added to the cart</h5>
 						<img src={img} alt={title} className="img-fluid" />
 						<h5>{title}</h5>
